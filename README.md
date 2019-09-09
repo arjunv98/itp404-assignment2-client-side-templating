@@ -1,26 +1,17 @@
-# itp404-assignment1-ajax
-## Ajax and the Reddit API
+# itp404-assignment2-client-side-templating
+## Client-Side Templating
 
-In this assignment, you will create a search and results page using Ajax and the Reddit API. The Reddit API endpoint you’ll be working with looks like this:
+This assignment will build off of assignment 1. Copy the files from assignment 1 into a new folder for assignment 2. DO NOT COPY THE FOLDER as this will copy over the .git folder and tie this project to the GitHub repo associated with assignment 1. This should be a brand new repo.
 
-```
-GET https://www.reddit.com/r/{subreddit}.json
-```
+In this assignment, you will update the Reddit search app so that all rendering of the search results is done through the Handlebars client-side templating library.
 
-To get data for the “javascript” subreddit, swap {subreddit} with “javascript”:
+### Rendering with Handlebars
+Display a div for each subreddit post containing the following fields:
 
-https://www.reddit.com/r/javascript.json
-
-### The Search Form
-At the top of the page, create a form with a single search input and a submit button. When the user submits the form, fire off an Ajax request to get all the threads for the subreddit that was typed into the search box.
-
-Note: Bind to the submit event on the form element instead of binding to the click event on the button.
-
-### Rendering the Results
-When the Ajax request responds with the data, render the title, score, and author of each post. Each post can be found in data.children. The title should be an anchor tag that links to url and opens in a new tab/window. Make sure that you are taking measures to protect against XSS attacks.
-
-### A Loading Spinner
-While the Ajax request is pending, show a loading indicator on the screen using one of these CSS spinners.
+- **title** that links to **url** in a new tab
+- **score**
+- **subreddit_subscribers** formatted with commas. Use a helper for this. To format a number, check out **Number.prototype.toLocaleString()**.
+- If **num_comments** > 0, show the number of comments, also formatted with commas. Otherwise, show “No comments”. Use the Handlebars **if** helper. In Handlebars, 0 is treated as falsey.
 
 ### Submission
-Create a repo on GitHub called **itp404-assignment1-ajax** (named EXACTLY that) and upload your files. Send an email to the TA and myself with the GitHub URL. Failure to submit by the deadline will result in a 0.
+Create a repo on GitHub called **itp404-assignment2-client-side-templating** and upload your files. Send an email to the TA and myself with the GitHub URL. Failure to submit by the deadline will result in a 0.
