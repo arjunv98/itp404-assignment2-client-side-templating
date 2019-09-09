@@ -1,7 +1,8 @@
 body {
-  background-color: #f18c3e;
+  background-color: #f19d77;
   color: #ffffff;
   font-family: 'Helvetica', sans-serif;
+  text-align: center;
 }
 
 h1 {
@@ -12,20 +13,35 @@ button {
   background-color: #ffffff;
 }
 
+#results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .post {
   text-align: center;
-  background-color: #eb5e4c;
-  width: 700px;
-  margin: 10px auto;
+  width: 350px;
+  padding: 1px 5px;
+  margin: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #eb5e4c;
+  border-radius: 15px;
+}
+
+.post > * {
+  margin: 3px auto;
 }
 
 .post a {
-  color: #aaaaff;
+  color: #5959ec;
   text-decoration: none;
 }
 
 .post a:hover {
-  color: #3f3fd4;
+  color: #2323a1;
 }
 
 .loader, .loader:before, .loader:after {

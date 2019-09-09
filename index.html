@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="main.css">
-  <title>Assignment 1</title>
+  <title>Assignment 2</title>
 </head>
 <body>
 
-<h1>A1: Ajax and the Reddit API</h1>
+<h1>A2: Client-Side Templating</h1>
+<div id="header"></div>
 
 <div class="search-bar">
   <input type="text" placeholder="Search...">
@@ -16,7 +17,28 @@
 
 <div id="results"></div>
 
+<template id="header-template">
+  <h3>r/{{firstPost.data.subreddit}} - {{format-num firstPost.data.subreddit_subscribers}} subscribers</h3>
+</template>
+
+<template id="posts-template">
+  {{#each posts}}
+  <div class="post">
+    <a href="{{data.url}}">{{data.title}}</a>
+    <p>{{data.score}} upvotes</p>
+    <p>
+      {{#if data.num_comments}}
+        {{format-num data.num_comments}} comments
+      {{else}}
+        No comments
+      {{/if}}
+    </p>
+  </div>
+  {{/each}}
+</template>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="handlebars-v4.1.2.js"></script>
 <script src="purify.min.js"></script>
 <script src="main.js"></script>
 
